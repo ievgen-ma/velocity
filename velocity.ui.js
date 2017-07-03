@@ -299,8 +299,8 @@
             "callout.pulse": {
                 defaultDuration: 825,
                 calls: [
-                    [{ scaleX: 1.1, scaleY: 1.1 }, 0.50, { easing: "easeInExpo" }],
-                    [{ scaleX: 1, scaleY: 1 }, 0.50]
+                    [{ scale: 1.1 }, 0.50, { easing: "easeInExpo" }],
+                    [{ scale: 1 }, 0.50]
                 ]
             },
             /* Animate.css */
@@ -318,15 +318,15 @@
             "callout.tada": {
                 defaultDuration: 1000,
                 calls: [
-                    [{ scaleX: 0.9, scaleY: 0.9, rotateZ: -3 }, 0.10],
-                    [{ scaleX: 1.1, scaleY: 1.1, rotateZ: 3 }, 0.10],
-                    [{ scaleX: 1.1, scaleY: 1.1, rotateZ: -3 }, 0.10],
+                    [{ scale: 0.9, rotateZ: -3 }, 0.10],
+                    [{ scale: 1.1, rotateZ: 3 }, 0.10],
+                    [{ scale: 1.1, rotateZ: -3 }, 0.10],
                     ["reverse", 0.125],
                     ["reverse", 0.125],
                     ["reverse", 0.125],
                     ["reverse", 0.125],
                     ["reverse", 0.125],
-                    [{ scaleX: 1, scaleY: 1, rotateZ: 0 }, 0.20]
+                    [{ scale: 1, rotateZ: 0 }, 0.20]
                 ]
             },
             "transition.fadeIn": {
@@ -429,8 +429,8 @@
             "transition.swoopIn": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scaleX: 0, scaleY: 0, translateX: -700, translateZ: 0 }, 0],
-                    [{ opacity: 1, transformOriginX: "100%", scaleX: 1, scaleY: 1, translateX: 0 }, 0.85],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 0],
+                    [{ opacity: 1, transformOriginX: "100%", scale: 1, translateX: 0 }, 0.85],
                     [{ transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ]
             },
@@ -439,8 +439,8 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 1, transformOriginX: "100%" }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scaleX: 0, scaleY: 0, translateX: -700, translateZ: 0 }, 0.85],
-                    [{ transformOriginX: "50%", transformOriginY: "50%", scaleX: 1, scaleY: 1, translateX: 0 }, 0]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 0.85],
+                    [{ transformOriginX: "50%", transformOriginY: "50%", scale: 1, translateX: 0 }, 0]
                 ]
             },
             /* Magic.css */
@@ -448,8 +448,8 @@
             "transition.whirlIn": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0, scaleY: 0, rotateY: 160 }, 0, { easing: "easeInOutSine" }],
-                    [{ opacity: 1, scaleX: 1, scaleY: 1, rotateY: 0 }, 1]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0, rotateY: 160 }, 0, { easing: "easeInOutSine" }],
+                    [{ opacity: 1, scale: 1, rotateY: 0 }, 1]
                 ]
             },
             /* Magic.css */
@@ -458,15 +458,15 @@
                 defaultDuration: 750,
                 calls: [
                     [{ opacity: 1 }, 0, { easing: "swing" }],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0, scaleY: 0, rotateY: 160 }, 1, { easing: "easeInOutQuint" }],
-                    [{ scaleX: 1, scaleY: 1, rotateY: 0 }, 0]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0, rotateY: 160 }, 1, { easing: "easeInOutQuint" }],
+                    [{ scale: 1, rotateY: 0 }, 0]
                 ]
             },
             "transition.shrinkIn": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 1.5, scaleY: 1.5, translateZ: 0 }, 0],
-                    [{ opacity: 0, scaleX: 1, scaleY: 1 }, 0],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.5, translateZ: 0 }, 0],
+                    [{ opacity: 0, scale: 1 }, 0],
                     [{ opacity: 1 }, 0.75]
                 ]
             },
@@ -474,44 +474,44 @@
                 defaultDuration: 600,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 1.3, scaleY: 1.3, translateZ: 0 }, 0.6],
-                    [{ scaleX: 1, scaleY: 1 }, 0]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.3, translateZ: 0 }, 0.6],
+                    [{ scale: 1 }, 0]
                 ]
             },
             "transition.expandIn": {
                 defaultDuration: 700,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0.625, scaleY: 0.625, translateZ: 0 }, 0],
-                    [{ opacity: 1, scaleX: 1, scaleY: 1 }, 0.7]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.625, translateZ: 0 }, 0],
+                    [{ opacity: 1, scale: 1 }, 0.7]
                 ]
             },
             "transition.expandOut": {
                 defaultDuration: 700,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0.5, scaleY: 0.5, translateZ: 0 }, 0.7],
-                    [{ scaleX: 1, scaleY: 1 }, 0]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.5, translateZ: 0 }, 0.7],
+                    [{ scale: 1 }, 0]
                 ]
             },
             /* Animate.css */
             "transition.bounceIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, scaleX: 0.3, scaleY: 0.3 }, 0],
-                    [{ opacity: 1, scaleX: 1.05, scaleY: 1.05 }, 0.35],
-                    [{ scaleX: 0.9, scaleY: 0.9, translateZ: 0 }, 0.20],
-                    [{ scaleX: 1, scaleY: 1 }, 0.45]
+                    [{ opacity: 0, scale: 0.3 }, 0],
+                    [{ opacity: 1, scale: 1.05 }, 0.35],
+                    [{ scale: 0.9, translateZ: 0 }, 0.20],
+                    [{ scale: 1 }, 0.45]
                 ]
             },
             /* Animate.css */
             "transition.bounceOut": {
                 defaultDuration: 800,
                 calls: [
-                    [{ scaleX: 0.95, scaleY: 0.95 }, 0.35],
-                    [{ scaleX: 1.1, scaleY: 1.1, translateZ: 0 }, 0.35],
+                    [{ scale: 0.95 }, 0.35],
+                    [{ scale: 1.1, translateZ: 0 }, 0.35],
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, scaleX: 0.3, scaleY: 0.3 }, 0.30],
-                    [{ scaleX: 1, scaleY: 1 }, 0]
+                    [{ opacity: 0, scale: 0.3 }, 0.30],
+                    [{ scale: 1 }, 0]
                 ],
             },
             /* Animate.css */
