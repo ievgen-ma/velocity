@@ -267,15 +267,13 @@
             "zoomIn": {
                 defaultDuration: 3000,
                 calls: [
-                    [{ scale: 1.2 }, 0.3],
-                    [{ scale: 1 }, 0.3],                    
+                    [{ scale: 1.2 }, 0.3]
                 ]
             },
             "zoomOut": {
                 defaultDuration: 3000,
                 calls: [
-                    [{ scale: 0.8 }, 0.3],
-                    [{ scale: 1 }, 0.3],                    
+                    [{ scale: 0.8 }, 0.3]
                 ]
             },
             "callout.bounce": {
