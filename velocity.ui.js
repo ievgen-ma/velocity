@@ -171,7 +171,7 @@
 
                                 /* Only trigger animateParentHeight() if we're using an In/Out transition. */
                                 if (redirectOptions.animateParentHeight && direction) {
-                                    animateParentHeight(elements, direction[0], redirectDuration + opts.delay, redirectOptions.stagger);
+                                    animateParentHeight(elements, direction[0], redirectDuration, redirectOptions.stagger);
                                 }
                             };
                         }
@@ -267,13 +267,13 @@
             "zoomIn": {
                 defaultDuration: 3000,
                 calls: [
-                    [{ scale: 1.2 }, 0.3]
+                    [{ scale: 1.2 }, 1]
                 ]
             },
             "zoomOut": {
                 defaultDuration: 3000,
                 calls: [
-                    [{ scale: 0.8 }, 0.3]
+                    [{ scale: 0.8 }, 1]
                 ]
             },
             "callout.bounce": {
@@ -303,8 +303,8 @@
             "callout.flash": {
                 defaultDuration: 1100,
                 calls: [
-                    [{ opacity: 0 }, 0.33, { easing: "easeInOutQuad" }],
-                    [{ opacity: 1 }, 0.33, { easing: "easeInOutQuad" }],
+                    [{ opacity: 0 }, 1, { easing: "easeInOutQuad" }],
+                    [{ opacity: 1 }, 1, { easing: "easeInOutQuad" }],
                 ]
             },
             /* Animate.css */
@@ -344,15 +344,15 @@
             "transition.fadeIn": {
                 defaultDuration: 500,
                 calls: [
-                    [{ opacity: 0 }, 0.25],
-                    [{ opacity: 1 }, 0.25]
+                    [{ opacity: 0 }, 0],
+                    [{ opacity: 1 }, 1]
                 ]
             },
             "transition.fadeOut": {
                 defaultDuration: 500,
                 calls: [
-                    [{ opacity: 1 }, 0.25],
-                    [{ opacity: 0 }, 0.25]
+                    [{ opacity: 1 }, 0],
+                    [{ opacity: 0 }, 1]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
@@ -360,7 +360,7 @@
                 defaultDuration: 700,
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateY: -55 }, 0],
-                    [{ opacity: 1, rotateY: 0 }, 0.7],
+                    [{ opacity: 1, rotateY: 0 }, 1],
                     [{ transformPerspective: 0 }, 0]
                 ]
             },
@@ -369,7 +369,7 @@
                 defaultDuration: 700,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, rotateY: 55 }, 0.7],
+                    [{ opacity: 0, transformPerspective: 800, rotateY: 55 }, 1],
                     [{ transformPerspective: 0, rotateY: 0 }, 0]
                 ]
             },
@@ -378,7 +378,7 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateX: -45 }, 0],
-                    [{ opacity: 1, rotateX: 0 }, 0.8],
+                    [{ opacity: 1, rotateX: 0 }, 1],
                     [{ transformPerspective: 0 }, 0]
                 ]
             },
@@ -387,7 +387,7 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, rotateX: 25 }, 0.8],
+                    [{ opacity: 0, transformPerspective: 800, rotateX: 25 }, 1],
                     [{ transformPerspective: 0, rotateX: 0 }, 0]
                 ]
             },
@@ -409,8 +409,8 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0.9, transformPerspective: 400, rotateY: -10 }, 0.8],
-                    [{ opacity: 0, rotateY: 90 }, 0.8],
+                    [{ opacity: 0.9, transformPerspective: 400, rotateY: -10 }, 0.5],
+                    [{ opacity: 0, rotateY: 90 }, 0.5],
                     [{ transformPerspective: 0, rotateY: 0 }, 0]
                 ]
             },
@@ -432,8 +432,8 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0.9, transformPerspective: 400, rotateX: -15 }, 0.8],
-                    [{ opacity: 0, rotateX: 90 }, 0.8],
+                    [{ opacity: 0.9, transformPerspective: 400, rotateX: -15 }, 0.5],
+                    [{ opacity: 0, rotateX: 90 }, 0.5],
                     [{ transformPerspective: 0, rotateX: 0 }, 0]
                 ],
             },
@@ -442,7 +442,7 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 0],
-                    [{ opacity: 1, transformOriginX: "100%", scale: 1, translateX: 0 }, 0.85],
+                    [{ opacity: 1, transformOriginX: "100%", scale: 1, translateX: 0 }, 1],
                     [{ transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ]
             },
@@ -451,7 +451,7 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 1, transformOriginX: "100%" }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 0.85],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 1],
                     [{ transformOriginX: "50%", transformOriginY: "50%", scale: 1, translateX: 0 }, 0]
                 ]
             },
@@ -479,14 +479,14 @@
                 calls: [
                     [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.5, translateZ: 0 }, 0],
                     [{ opacity: 0, scale: 1 }, 0],
-                    [{ opacity: 1 }, 0.75]
+                    [{ opacity: 1 }, 1]
                 ]
             },
             "transition.shrinkOut": {
                 defaultDuration: 600,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.3, translateZ: 0 }, 0.6],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.3, translateZ: 0 }, 1],
                     [{ scale: 1 }, 0]
                 ]
             },
@@ -494,14 +494,14 @@
                 defaultDuration: 700,
                 calls: [
                     [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.625, translateZ: 0 }, 0],
-                    [{ opacity: 1, scale: 1 }, 0.7]
+                    [{ opacity: 1, scale: 1 }, 1]
                 ]
             },
             "transition.expandOut": {
                 defaultDuration: 700,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.5, translateZ: 0 }, 0.7],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.5, translateZ: 0 }, 1],
                     [{ scale: 1 }, 0]
                 ]
             },
@@ -542,7 +542,7 @@
                 calls: [
                     [{ translateY: 20 }, 0.20],
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: -1000 }, 0.60, { easing: "easeInCirc" }],
+                    [{ opacity: 0, translateY: -1000 }, 0.80, { easing: "easeInCirc" }],
                     [{ translateY: 0 }, 0]
                 ],
             },
@@ -562,7 +562,7 @@
                 calls: [
                     [{ translateY: -20 }, 0.20],
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: 1000 }, 0.40, { easing: "easeInCirc" }],
+                    [{ opacity: 0, translateY: 1000 }, 0.80, { easing: "easeInCirc" }],
                     [{ translateY: 0 }, 0]
                 ]
             },
@@ -582,7 +582,7 @@
                 calls: [
                     [{ translateX: 30 }, 0.20],
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateX: -1250 }, 0.4, { easing: "easeInCirc" }],
+                    [{ opacity: 0, translateX: -1250 }, 0.8, { easing: "easeInCirc" }],
                     [{ translateX: 0 }, 0]
                 ]
             },
@@ -602,7 +602,7 @@
                 calls: [
                     [{ translateX: -30 }, 0.20],
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateX: 1250 }, 0.40, { easing: "easeInCirc" }],
+                    [{ opacity: 0, translateX: 1250 }, 0.80, { easing: "easeInCirc" }],
                     [{ translateX: 0 }, 0]
                 ]
             },
@@ -610,14 +610,14 @@
                 defaultDuration: 900,
                 calls: [
                     [{ opacity: 0, translateY: 20, translateZ: 0 }, 0],
-                    [{ opacity: 1, translateY: 0 }, 0.9]
+                    [{ opacity: 1, translateY: 0 }, 1]
                 ]
             },
             "transition.slideUpOut": {
                 defaultDuration: 900,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: -20, translateZ: 0 }, 0.9],
+                    [{ opacity: 0, translateY: -20, translateZ: 0 }, 1],
                     [{ translateY: 0 }, 0]
                 ]
             },
@@ -625,14 +625,14 @@
                 defaultDuration: 900,
                 calls: [
                     [{ opacity: 0, translateY: -20, translateZ: 0 }, 0],
-                    [{ opacity: 1, translateY: 0 }, 0.9]
+                    [{ opacity: 1, translateY: 0 }, 1]
                 ]
             },
             "transition.slideDownOut": {
                 defaultDuration: 900,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: 20, translateZ: 0 }, 0.9],
+                    [{ opacity: 0, translateY: 20, translateZ: 0 }, 1],
                     [{ translateY: 0 }, 0]
                 ]
             },
@@ -670,14 +670,14 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 0, translateY: 75, translateZ: 0 }, 0],
-                    [{ opacity: 1, translateY: 0 }, 0.85]
+                    [{ opacity: 1, translateY: 0 }, 1]
                 ]
             },
             "transition.slideUpBigOut": {
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: -75, translateZ: 0 }, 0.8],
+                    [{ opacity: 0, translateY: -75, translateZ: 0 }, 1],
                     [{ translateY: 0 }, 0]
                 ],
             },
@@ -685,14 +685,14 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 0, translateY: -75 }, 0],
-                    [{ opacity: 1, translateY: 0 }, 0.85]
+                    [{ opacity: 1, translateY: 0 }, 1]
                 ]
             },
             "transition.slideDownBigOut": {
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateY: 75, translateZ: 0 }, 0.8],
+                    [{ opacity: 0, translateY: 75, translateZ: 0 }, 1],
                     [{ translateY: 0 }, 0]
                 ],
             },
@@ -707,7 +707,7 @@
                 defaultDuration: 750,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateX: -75, translateZ: 0 }, 0.75],
+                    [{ opacity: 0, translateX: -75, translateZ: 0 }, 1],
                     [{ translateX: 0 }, 0]
                 ],
             },
@@ -715,14 +715,14 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 0, translateX: 75, translateZ: 0 }, 0],
-                    [{ opacity: 1, translateX: 0 }, 0.8]
+                    [{ opacity: 1, translateX: 0 }, 1]
                 ]
             },
             "transition.slideRightBigOut": {
                 defaultDuration: 750,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, translateX: 75, translateZ: 0 }, 0.75],
+                    [{ opacity: 0, translateX: 75, translateZ: 0 }, 1],
                     [{ translateX: 0 }, 0]
                 ],
             },
@@ -731,7 +731,7 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 0],
-                    [{ opacity: 1, rotateX: 0 }, 0.8],
+                    [{ opacity: 1, rotateX: 0 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ]
             },
@@ -741,7 +741,7 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 0.85],
+                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateX: 0 }, 0]
                 ]
             },
@@ -751,7 +751,7 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 0],
-                    [{ opacity: 1, rotateX: 0 }, 0.8],
+                    [{ opacity: 1, rotateX: 0 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ],
             },
@@ -761,7 +761,7 @@
                 defaultDuration: 850,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 0.85],
+                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateX: 0 }, 0]
                 ],
             },
@@ -771,7 +771,7 @@
                 defaultDuration: 950,
                 calls: [
                     [{ opacity: 0, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: -180 }, 0],
-                    [{ opacity: 1, rotateY: 0 }, 0.95],
+                    [{ opacity: 1, rotateY: 0 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ]
             },
@@ -781,7 +781,7 @@
                 defaultDuration: 950,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: -180 }, 0.95],
+                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: -180 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateY: 0 }, 0]
                 ],
             },
@@ -791,7 +791,7 @@
                 defaultDuration: 950,
                 calls: [
                     [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 0],
-                    [{ opacity: 1, rotateY: 0 }, 0.95],
+                    [{ opacity: 1, rotateY: 0 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ],
             },
@@ -801,7 +801,7 @@
                 defaultDuration: 950,
                 calls: [
                     [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 0.95],
+                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 1],
                     [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateY: 0 }, 0]
                 ],
             }
