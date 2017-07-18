@@ -341,6 +341,12 @@
                     [{ scale: 1, rotateZ: 0 }, 0.20]
                 ]
             },
+            "legacy.rotate": {
+                defaultDuration: 1000,
+                calls: [                    
+                    [{ rotateZ: '+=360' }, 1, { easing: "linear" }]                    
+                ]
+            },
             "transition.fadeIn": {
                 defaultDuration: 500,
                 calls: [
