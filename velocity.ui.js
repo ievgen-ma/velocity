@@ -344,7 +344,7 @@
             "legacy.rotate": {
                 defaultDuration: 1000,
                 calls: [                    
-                    [{ rotateZ: '+=360' }, 1, { easing: "linear" }]                    
+                    [{ rotateZ: 360 }, 1, { easing: "linear" }]                    
                 ]
             },
             "transition.fadeIn": {
