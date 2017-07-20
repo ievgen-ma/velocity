@@ -289,14 +289,14 @@
             "callout.shake": {
                 defaultDuration: 800,
                 calls: [
-                    [{ translateX: -11 }],
-                    [{ translateX: 11 }],
-                    [{ translateX: -11 }],
-                    [{ translateX: 11 }],
-                    [{ translateX: -11 }],
-                    [{ translateX: 11 }],
-                    [{ translateX: -11 }],
-                    [{ translateX: 0 }]
+                    [{ translateX: -11 }, 0.1],
+                    [{ translateX: 11 }, 0.1],
+                    [{ translateX: -11 }, 0.1],
+                    [{ translateX: 11 }, 0.1],
+                    [{ translateX: -11 }, 0.1],
+                    [{ translateX: 11 }, 0.1],
+                    [{ translateX: -11 }, 0.1],
+                    [{ translateX: 0 }, 0]
                 ]
             },
             /* Animate.css */
@@ -319,11 +319,11 @@
             "callout.swing": {
                 defaultDuration: 950,
                 calls: [
-                    [{ rotateZ: 15 }],
-                    [{ rotateZ: -10 }],
-                    [{ rotateZ: 5 }],
-                    [{ rotateZ: -5 }],
-                    [{ rotateZ: 0 }]
+                    [{ rotateZ: 15 }, 0.2],
+                    [{ rotateZ: -10 }, 0.2],
+                    [{ rotateZ: 5 }, 0.2],
+                    [{ rotateZ: -5 }, 0.2],
+                    [{ rotateZ: 0 }, 0.2]
                 ]
             },
             /* Animate.css */
@@ -343,9 +343,9 @@
             },
             "legacy.rotate": {
                 defaultDuration: 1000,
-                calls: [                    
+                calls: [
                     [{ rotateZ: 360 }, 1, { easing: "linear" }],
-                    [{ rotateZ: 0 }, 0],                    
+                    [{ rotateZ: 0 }, 0],
                 ]
             },
             "transition.fadeIn": {
