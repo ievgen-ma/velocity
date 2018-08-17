@@ -4,7 +4,7 @@
 
 /* VelocityJS.org UI Pack (5.2.0). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License. Portions copyright Daniel Eden, Christian Pucci. */
 
-(function(factory) {
+(function (factory) {
     "use strict";
     /* CommonJS module. */
     if (typeof require === "function" && typeof exports === "object") {
@@ -16,9 +16,9 @@
     } else {
         factory();
     }
-}(function() {
+}(function () {
     "use strict";
-    return function(global, window, document, undefined) {
+    return function (global, window, document, undefined) {
 
         /*************
          Checks
@@ -43,10 +43,10 @@
                 return false;
             }
 
-            $.each([primary, secondary], function(i, versionObject) {
+            $.each([primary, secondary], function (i, versionObject) {
                 var versionIntsComponents = [];
 
-                $.each(versionObject, function(component, value) {
+                $.each(versionObject, function (component, value) {
                     while (value.toString().length < 5) {
                         value = "0" + value;
                     }
@@ -70,14 +70,14 @@
          ************************/
 
         /* Note: RegisterUI is a legacy name. */
-        Velocity.RegisterEffect = Velocity.RegisterUI = function(effectName, properties) {
+        Velocity.RegisterEffect = Velocity.RegisterUI = function (effectName, properties) {
             /* Animate the expansion/contraction of the elements' parent's height for In/Out effects. */
             function animateParentHeight(elements, direction, totalDuration, stagger) {
                 var totalHeightDelta = 0,
                     parentNode;
 
                 /* Sum the total height (including padding and margin) of all targeted elements. */
-                $.each(elements.nodeType ? [elements] : elements, function(i, element) {
+                $.each(elements.nodeType ? [elements] : elements, function (i, element) {
                     if (stagger) {
                         /* Increase the totalDuration by the successive delay amounts produced by the stagger option. */
                         totalDuration += i * stagger;
@@ -92,7 +92,7 @@
                         propertiesToSum = ["height"];
                     }
 
-                    $.each(propertiesToSum, function(i, property) {
+                    $.each(propertiesToSum, function (i, property) {
                         totalHeightDelta += parseFloat(Velocity.CSS.getPropertyValue(element, property));
                     });
                 });
@@ -104,7 +104,7 @@
             }
 
             /* Register a custom redirect for each effect. */
-            Velocity.Redirects[effectName] = function(element, redirectOptions, elementsIndex, elementsSize, elements, promiseData, loop) {
+            Velocity.Redirects[effectName] = function (element, redirectOptions, elementsIndex, elementsSize, elements, promiseData, loop) {
                 var finalElement = (elementsIndex === elementsSize - 1),
                     totalDuration = 0;
 
@@ -153,7 +153,7 @@
                         opts.delay += (parseFloat(redirectOptions.delay) || 0);
 
                         if (elementsIndex === 0) {
-                            opts.begin = function() {
+                            opts.begin = function () {
                                 /* Only trigger a begin callback on the first effect call with the first element in the set. */
                                 if (redirectOptions.begin) {
                                     redirectOptions.begin.call(elements, elements);
@@ -164,7 +164,7 @@
                                 /* Make "in" transitioning elements invisible immediately so that there's no FOUC between now
                                  and the first RAF tick. */
                                 if ((direction && direction[0] === "In") && propertyMap.opacity !== undefined) {
-                                    $.each(elements.nodeType ? [elements] : elements, function(i, element) {
+                                    $.each(elements.nodeType ? [elements] : elements, function (i, element) {
                                         Velocity.CSS.setPropertyValue(element, "opacity", 0);
                                     });
                                 }
@@ -195,9 +195,9 @@
                     /* Special processing for the last effect call. */
                     if (callIndex === properties.calls.length - 1) {
                         /* Append promise resolving onto the user's redirect callback. */
-                        var injectFinalCallbacks = function() {
+                        var injectFinalCallbacks = function () {
                             if ((redirectOptions.display === undefined || redirectOptions.display === "none") && /Out$/.test(effectName)) {
-                                $.each(elements.nodeType ? [elements] : elements, function(i, element) {
+                                $.each(elements.nodeType ? [elements] : elements, function (i, element) {
                                     Velocity.CSS.setPropertyValue(element, "display", "none");
                                 });
                             }
@@ -209,7 +209,7 @@
                             }
                         };
 
-                        opts.complete = function() {
+                        opts.complete = function () {
                             if (loop) {
                                 Velocity.Redirects[effectName](element, redirectOptions, elementsIndex, elementsSize, elements, promiseData, loop === true ? true : Math.max(0, loop - 1));
                             }
@@ -484,17 +484,15 @@
             "transition.shrinkIn": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.5, translateZ: 0 }, 0],
-                    [{ opacity: 0, scale: 1 }, 0],
-                    [{ opacity: 1 }, 1]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 1.5, scaleY: 1.5 }, 0],
+                    [{ opacity: 1, scaleX: 1, scaleY: 1, translateZ: 0 }, 1]
                 ]
             },
             "transition.shrinkOut": {
                 defaultDuration: 600,
                 calls: [
-                    [{ opacity: 1 }, 0],
+                    [{ opacity: 1, }, 0],
                     [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.3, translateZ: 0 }, 1],
-                    [{ scale: 1 }, 0]
                 ]
             },
             "transition.expandIn": {
@@ -733,45 +731,48 @@
                     [{ translateX: 0 }, 0]
                 ],
             },
+
             /* Magic.css */
+            /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.perspectiveUpIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 0],
+                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 0],
                     [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
-                ]
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
+                ],
             },
             /* Magic.css */
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.perspectiveUpOut": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateX: 0 }, 0]
-                ]
+                    [{ opacity: 1, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 0 }, 0],
+                    [{ opacity: 0, rotateX: 180 }, 1],
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
+                ],
             },
+
             /* Magic.css */
-            /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.perspectiveDownIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 0],
+                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 0],
                     [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
-                ],
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
+                ]
             },
             /* Magic.css */
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.perspectiveDownOut": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateX: 0 }, 0]
-                ],
+                    [{ opacity: 1, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: 0 }, 0],
+                    [{ opacity: 0, rotateX: -180 }, 1],
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
+                ]
             },
+
             /* Magic.css */
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.perspectiveLeftIn": {
@@ -787,9 +788,9 @@
             "transition.perspectiveLeftOut": {
                 defaultDuration: 950,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: -180 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateY: 0 }, 0]
+                    [{ opacity: 1, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: 0 }, 0],
+                    [{ opacity: 0, rotateY: -180 }, 1],
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ],
             },
             /* Magic.css */
@@ -799,7 +800,7 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 0],
                     [{ opacity: 1, rotateY: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }, 0]
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ],
             },
             /* Magic.css */
@@ -807,9 +808,9 @@
             "transition.perspectiveRightOut": {
                 defaultDuration: 950,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%", rotateY: 0 }, 0]
+                    [{ opacity: 1, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 0 }, 0],
+                    [{ opacity: 0, rotateY: 180 }, 1],
+                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ],
             }
         };
@@ -826,11 +827,11 @@
          **********************/
 
         /* Note: Sequence calls must use Velocity's single-object arguments syntax. */
-        Velocity.RunSequence = function(originalSequence) {
+        Velocity.RunSequence = function (originalSequence) {
             var sequence = $.extend(true, [], originalSequence);
 
             if (sequence.length > 1) {
-                $.each(sequence.reverse(), function(i, currentCall) {
+                $.each(sequence.reverse(), function (i, currentCall) {
                     var nextCall = sequence[i + 1];
 
                     if (nextCall) {
@@ -844,7 +845,7 @@
                             callbackOriginal = nextCallOptions && nextCallOptions[timing],
                             options = {};
 
-                        options[timing] = function() {
+                        options[timing] = function () {
                             var nextCallElements = nextCall.e || nextCall.elements;
                             var elements = nextCallElements.nodeType ? [nextCallElements] : nextCallElements;
 
