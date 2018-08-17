@@ -467,8 +467,8 @@
             "transition.whirlIn": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0, rotateY: 160 }, 0, { easing: "easeInOutSine" }],
-                    [{ opacity: 1, scale: 1, rotateY: 0 }, 1]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0, scaleY: 0, rotateY: 160 }, 0, { easing: "easeInOutSine" }],
+                    [{ opacity: 1, scaleX: 1, scaleY: 1, rotateY: 0 }, 1]
                 ]
             },
             /* Magic.css */
@@ -476,9 +476,9 @@
             "transition.whirlOut": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 1 }, 0, { easing: "swing" }],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0, rotateY: 160 }, 1, { easing: "easeInOutQuint" }],
-                    [{ scale: 1, rotateY: 0 }, 0]
+                    [{ opacity: 1, transformOriginX: "50%", transformOriginY: "50%" }, 0, { easing: "swing" }],
+                    [{ opacity: 0, scaleX: 0, scaleY: 0, rotateY: 160 }, 1, { easing: "easeInOutQuint" }],
+                    [{ scale: 1, scaleX: 1, scaleY: 1, rotateY: 0 }, 0]
                 ]
             },
             "transition.shrinkIn": {
