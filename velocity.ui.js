@@ -368,16 +368,16 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateY: -55 }, 0],
                     [{ opacity: 1, rotateY: 0 }, 1],
-                    [{ transformPerspective: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.flipXOut": {
                 defaultDuration: 700,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, rotateY: 55 }, 1],
-                    [{ transformPerspective: 0, rotateY: 0 }, 0]
+                    [{ opacity: 1, transformPerspective: 800, rotateY: 0 }, 0],
+                    [{ opacity: 0, rotateY: 55 }, 1],
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
@@ -386,16 +386,16 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateX: -45 }, 0],
                     [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
             "transition.flipYOut": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformPerspective: 800, rotateX: 25 }, 1],
-                    [{ transformPerspective: 0, rotateX: 0 }, 0]
+                    [{ opacity: 1, transformPerspective: 800, rotateX: 0 }, 0],
+                    [{ opacity: 0, rotateX: 45 }, 1],
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Animate.css */
@@ -407,7 +407,7 @@
                     [{ opacity: 0.725, rotateY: -10 }, 0.50],
                     [{ opacity: 0.80, rotateY: 10 }, 0.25],
                     [{ opacity: 1, rotateY: 0 }, 0.25],
-                    [{ transformPerspective: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Animate.css */
@@ -415,10 +415,10 @@
             "transition.flipBounceXOut": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0.9, transformPerspective: 400, rotateY: -10 }, 0.5],
+                    [{ opacity: 1, transformPerspective: 400, rotateY: 0 }, 0],
+                    [{ opacity: 0.9, rotateY: -10 }, 0.5],
                     [{ opacity: 0, rotateY: 90 }, 0.5],
-                    [{ transformPerspective: 0, rotateY: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Animate.css */
@@ -430,7 +430,7 @@
                     [{ opacity: 0.725, rotateX: -10 }, 0.50],
                     [{ opacity: 0.80, rotateX: 10 }, 0.25],
                     [{ opacity: 1, rotateX: 0 }, 0.25],
-                    [{ transformPerspective: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ],
             },
             /* Animate.css */
@@ -438,10 +438,10 @@
             "transition.flipBounceYOut": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0.9, transformPerspective: 400, rotateX: -15 }, 0.5],
+                    [{ opacity: 1, transformPerspective: 400, rotateX: 0 }, 0],
+                    [{ opacity: 0.9, rotateX: -15 }, 0.5],
                     [{ opacity: 0, rotateX: 90 }, 0.5],
-                    [{ transformPerspective: 0, rotateX: 0 }, 0]
+                    [{ transformPerspective: 0 }]
                 ],
             },
             /* Magic.css */
