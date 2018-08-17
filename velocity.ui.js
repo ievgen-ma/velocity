@@ -498,16 +498,15 @@
             "transition.expandIn": {
                 defaultDuration: 700,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.625, translateZ: 0 }, 0],
-                    [{ opacity: 1, scale: 1 }, 1]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 0.625, scaleY: 0.625, translateZ: 0 }, 0],
+                    [{ opacity: 1, scaleX: 1, scaleY: 1 }, 1]
                 ]
             },
             "transition.expandOut": {
                 defaultDuration: 700,
                 calls: [
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 0.5, translateZ: 0 }, 1],
-                    [{ scale: 1 }, 0]
+                    [{ opacity: 1, scaleX: 1, scaleY: 1, transformOriginX: "50%", transformOriginY: "50%" }, 0],
+                    [{ opacity: 0, translateZ: 0, scaleX: 0.5, scaleY: 0.5 }, 1],
                 ]
             },
             /* Animate.css */
