@@ -484,15 +484,15 @@
             "transition.shrinkIn": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 1.5, scaleY: 1.5 }, 0],
-                    [{ opacity: 1, scaleX: 1, scaleY: 1, translateZ: 0 }, 1]
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scaleX: 1.5, scaleY: 1.5, translateZ: 0 }, 0],
+                    [{ opacity: 1, scaleX: 1, scaleY: 1 }, 1]
                 ]
             },
             "transition.shrinkOut": {
                 defaultDuration: 600,
                 calls: [
-                    [{ opacity: 1, }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "50%", scale: 1.3, translateZ: 0 }, 1],
+                    [{ opacity: 1, transformOriginX: "50%", transformOriginY: "50%" }, 0],
+                    [{ opacity: 0, scale: 1.3, translateZ: 0 }, 1],
                 ]
             },
             "transition.expandIn": {
