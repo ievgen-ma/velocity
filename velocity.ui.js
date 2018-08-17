@@ -513,10 +513,10 @@
             "transition.bounceIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, scale: 0.3 }, 0],
-                    [{ opacity: 1, scale: 1.05 }, 0.35],
-                    [{ scale: 0.9, translateZ: 0 }, 0.20],
-                    [{ scale: 1 }, 0.45]
+                    [{ opacity: 0, scaleX: 0.3, scaleY: 0.3 }, 0],
+                    [{ opacity: 1, scaleX: 1.05, scaleY: 1.05 }, 0.35],
+                    [{ scaleX: 0.9, scaleY: 0.9, translateZ: 0 }, 0.20],
+                    [{ scaleX: 1, scaleY: 1 }, 0.45]
                 ]
             },
             /* Animate.css */
