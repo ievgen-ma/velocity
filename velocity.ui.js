@@ -448,8 +448,8 @@
             "transition.swoopIn": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 0],
-                    [{ opacity: 1, transformOriginX: "100%", scale: 1, translateX: 0 }, 1],
+                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scaleX: 0, scaleY: 0, translateX: -700, translateZ: 0 }, 0],
+                    [{ opacity: 1, transformOriginX: "100%", scaleX: 1, scaleY: 1, translateX: 0 }, 1],
                     [{ transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ]
             },
@@ -457,9 +457,9 @@
             "transition.swoopOut": {
                 defaultDuration: 850,
                 calls: [
-                    [{ opacity: 1, transformOriginX: "100%" }, 0],
-                    [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scale: 0, translateX: -700, translateZ: 0 }, 1],
-                    [{ transformOriginX: "50%", transformOriginY: "50%", scale: 1, translateX: 0 }, 0]
+                    [{ opacity: 1, transformOriginX: "100%", transformOriginY: "100%" }, 0],
+                    [{ opacity: 0, transformOriginX: "50%", scaleX: 0, scaleY: 0, translateX: -700, translateZ: 0 }, 1],
+                    [{ transformOriginX: "50%", transformOriginY: "50%", scaleX: 1, scaleY: 1, translateX: 0 }, 0]
                 ]
             },
             /* Magic.css */
