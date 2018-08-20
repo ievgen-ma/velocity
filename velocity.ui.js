@@ -523,19 +523,19 @@
             "transition.bounceOut": {
                 defaultDuration: 800,
                 calls: [
-                    [{ scale: 0.95 }, 0.35],
-                    [{ scale: 1.1, translateZ: 0 }, 0.35],
-                    [{ opacity: 1 }, 0],
-                    [{ opacity: 0, scale: 0.3 }, 0.30],
-                    [{ scale: 1 }, 0]
+                    [{ scaleX: 0.95, scaleY: 0.95 }, 0.35],
+                    [{ scaleX: 1.1, scaleY: 1.1, translateZ: 0 }, 0.35],
+                    [{ opacity: 1, scaleX: 0.3, scaleY: 0.3 }, 0.30],
+                    [{ opacity: 0 }, 0.30],
+                    [{ scaleX: 1, scaleY: 1 }]
                 ],
             },
             /* Animate.css */
             "transition.bounceUpIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, translateY: 1000 }, 0, { easing: "easeOutCirc" }],
-                    [{ opacity: 1, translateY: -30 }, 0.60],
+                    [{ opacity: 0, translateY: 1000 }, 0.60, { easing: "easeOutCirc" }],
+                    [{ opacity: 1, translateY: -30 }, 0],
                     [{ translateY: 10 }, 0.20],
                     [{ translateY: 0 }, 0.20]
                 ]
@@ -545,17 +545,17 @@
                 defaultDuration: 1000,
                 calls: [
                     [{ translateY: 20 }, 0.20],
-                    [{ opacity: 1 }, 0],
+                    [{ opacity: 1 }, 0.80],
                     [{ opacity: 0, translateY: -1000 }, 0.80, { easing: "easeInCirc" }],
-                    [{ translateY: 0 }, 0]
+                    [{ translateY: 0 }]
                 ],
             },
             /* Animate.css */
             "transition.bounceDownIn": {
                 defaultDuration: 800,
                 calls: [
-                    [{ opacity: 0, translateY: -1000 }, 0],
-                    [{ opacity: 1, translateY: 30 }, 0.60, { easing: "easeOutCirc" }],
+                    [{ opacity: 0, translateY: -1000 }, 0.60, { easing: "easeOutCirc" }],
+                    [{ opacity: 1, translateY: 30 }, 0],
                     [{ translateY: -10 }, 0.20],
                     [{ translateY: 0 }, 0.20]
                 ]
@@ -567,15 +567,15 @@
                     [{ translateY: -20 }, 0.20],
                     [{ opacity: 1 }, 0],
                     [{ opacity: 0, translateY: 1000 }, 0.80, { easing: "easeInCirc" }],
-                    [{ translateY: 0 }, 0]
+                    [{ translateY: 0 }]
                 ]
             },
             /* Animate.css */
             "transition.bounceLeftIn": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 0, translateX: -1250 }, 0, { easing: "easeOutCirc" }],
-                    [{ opacity: 1, translateX: 30 }, 0.60],
+                    [{ opacity: 0, translateX: -1250 }, 0.60, { easing: "easeOutCirc" }],
+                    [{ opacity: 1, translateX: 30 }, 0],
                     [{ translateX: -10 }, 0.20],
                     [{ translateX: 0 }, 0.20]
                 ]
@@ -587,15 +587,15 @@
                     [{ translateX: 30 }, 0.20],
                     [{ opacity: 1 }, 0],
                     [{ opacity: 0, translateX: -1250 }, 0.8, { easing: "easeInCirc" }],
-                    [{ translateX: 0 }, 0]
+                    [{ translateX: 0 }]
                 ]
             },
             /* Animate.css */
             "transition.bounceRightIn": {
                 defaultDuration: 750,
                 calls: [
-                    [{ opacity: 0, translateX: 1250 }, 0, { easing: "easeOutCirc" }],
-                    [{ opacity: 1, translateX: -30 }, 0.60],
+                    [{ opacity: 0, translateX: 1250 }, 0.60, { easing: "easeOutCirc" }],
+                    [{ opacity: 1, translateX: -30 }, 0],
                     [{ translateX: 10 }, 0.20],
                     [{ translateX: 0 }, 0.20]
                 ]
@@ -607,7 +607,7 @@
                     [{ translateX: -30 }, 0.20],
                     [{ opacity: 1 }, 0],
                     [{ opacity: 0, translateX: 1250 }, 0.80, { easing: "easeInCirc" }],
-                    [{ translateX: 0 }, 0]
+                    [{ translateX: 0 }]
                 ]
             },
             "transition.slideUpIn": {
