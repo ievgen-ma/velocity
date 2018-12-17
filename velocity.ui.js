@@ -368,7 +368,6 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateY: -55 }, 0],
                     [{ opacity: 1, rotateY: 0 }, 1],
-                    [{ transformPerspective: 0 }]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
@@ -385,8 +384,7 @@
                 defaultDuration: 800,
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, rotateX: -45 }, 0],
-                    [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0 }]
+                    [{ opacity: 1, rotateX: 0 }, 1]
                 ]
             },
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
@@ -450,7 +448,6 @@
                 calls: [
                     [{ opacity: 0, transformOriginX: "50%", transformOriginY: "100%", scaleX: 0, scaleY: 0, translateX: -700, translateZ: 0 }, 0],
                     [{ opacity: 1, transformOriginX: "100%", scaleX: 1, scaleY: 1, translateX: 0 }, 1],
-                    [{ transformOriginX: "50%", transformOriginY: "50%" }, 0]
                 ]
             },
             /* Magic.css */
@@ -738,7 +735,6 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: 0, rotateX: 180 }, 0],
                     [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ],
             },
             /* Magic.css */
@@ -758,7 +754,6 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 800, transformOriginX: 0, transformOriginY: "100%", rotateX: -180 }, 0],
                     [{ opacity: 1, rotateX: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
                 ]
             },
             /* Magic.css */
@@ -779,8 +774,8 @@
                 calls: [
                     [{ opacity: 0, transformPerspective: 2000, transformOriginX: 0, transformOriginY: 0, rotateY: -180 }, 0],
                     [{ opacity: 1, rotateY: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
-                ]
+                ],
+               
             },
             /* Magic.css */
             /* Support: Loses rotation in IE9/Android 2.3 (fades only). */
@@ -798,8 +793,7 @@
                 defaultDuration: 950,
                 calls: [
                     [{ opacity: 0, transformPerspective: 2000, transformOriginX: "100%", transformOriginY: 0, rotateY: 180 }, 0],
-                    [{ opacity: 1, rotateY: 0 }, 1],
-                    [{ transformPerspective: 0, transformOriginX: "50%", transformOriginY: "50%" }]
+                    [{ opacity: 1, rotateY: 0 }, 1]
                 ],
             },
             /* Magic.css */
