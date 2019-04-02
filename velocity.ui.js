@@ -1014,7 +1014,7 @@
 							opacity: 0,
 							transformPerspective: 800,
 							transformOriginX: 0,
-							transformOriginY: "100%",
+							transformOriginY: 0,
 							rotateX: -180
 						},
 						0
@@ -1022,9 +1022,9 @@
 					[
 						{
 							opacity: 1,
-							transformPerspective: 800,
-							transformOriginX: 0,
-							transformOriginY: "100%",
+							// transformPerspective: 800,
+							// transformOriginX: 0,
+							// transformOriginY: "100%",
 							rotateX: 0
 						},
 						1
@@ -1032,8 +1032,8 @@
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%"
+							// transformOriginX: "50%",
+							// transformOriginY: "50%"
 						}
 					]
 				]
@@ -1048,16 +1048,16 @@
 							opacity: 1,
 							transformPerspective: 800,
 							transformOriginX: 0,
-							transformOriginY: "100%"
+							transformOriginY: 0
 						},
 						0
 					],
 					[
 						{
 							opacity: 0,
-							transformPerspective: 800,
-							transformOriginX: 0,
-							transformOriginY: "100%",
+							// transformPerspective: 800,
+							// transformOriginX: 0,
+							// transformOriginY: "100%",
 							rotateX: -180
 						},
 						1
@@ -1065,8 +1065,8 @@
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%",
+							// transformOriginX: "50%",
+							// transformOriginY: "50%",
 							rotateX: 0
 						}
 					]
@@ -1082,7 +1082,7 @@
 							opacity: 0,
 							transformPerspective: 800,
 							transformOriginX: 0,
-							transformOriginY: 0,
+							transformOriginY: "100%",
 							rotateX: 180
 						},
 						0
@@ -1090,9 +1090,9 @@
 					[
 						{
 							opacity: 1,
-							transformPerspective: 800,
-							transformOriginX: 0,
-							transformOriginY: 0,
+							// transformPerspective: 800,
+							// transformOriginX: 0,
+							// transformOriginY: "100%",
 							rotateX: 0
 						},
 						1
@@ -1100,8 +1100,8 @@
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%"
+							// transformOriginX: "50%",
+							// transformOriginY: "50%"
 						}
 					]
 				]
@@ -1121,12 +1121,22 @@
 						},
 						0
 					],
-					[{ opacity: 0, rotateX: -180 }, 1],
+					[
+						{
+							opacity: 0,
+							// transformPerspective: 800,
+							// transformOriginX: 0,
+							// transformOriginY: "100%",
+							rotateX: -180
+						},
+						1
+					],
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%"
+							// transformOriginX: "50%",
+							// transformOriginY: "50%",
+							rotateX: 0
 						}
 					]
 				]
@@ -1147,7 +1157,23 @@
 						},
 						0
 					],
-					[{ opacity: 1, rotateY: 0 }, 1]
+					[
+						{
+							opacity: 1,
+							// transformPerspective: 2000,
+							// transformOriginX: "100%",
+							// transformOriginY: 0,
+							rotateY: 0
+						},
+						1
+					],
+					[
+						{
+							transformPerspective: 0,
+							// transformOriginX: "50%",
+							// transformOriginY: "50%"
+						}
+					]
 				]
 			},
 			/* Magic.css */
@@ -1160,15 +1186,17 @@
 							opacity: 1,
 							transformPerspective: 2000,
 							transformOriginX: 0,
-							transformOriginY: 0
+							transformOriginY: 0,
+							rotateY: 0
 						},
 						0
 					],
 					[
 						{
 							opacity: 0,
-							transformOriginX: 0,
-							transformOriginY: 0,
+							// transformPerspective: 2000,
+							// transformOriginX: "100%",
+							// transformOriginY: 0,
 							rotateY: -180
 						},
 						1
@@ -1176,8 +1204,8 @@
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%",
+							// transformOriginX: "50%",
+							// transformOriginY: "50%",
 							rotateY: 0
 						}
 					]
@@ -1198,7 +1226,23 @@
 						},
 						0
 					],
-					[{ opacity: 1, rotateY: 0 }, 1]
+					[
+						{
+							opacity: 1,
+							// transformPerspective: 2000,
+							// transformOriginX: "100%",
+							// transformOriginY: 0,
+							rotateY: 0
+						},
+						1
+					],
+					[
+						{
+							transformPerspective: 0,
+							// transformOriginX: "50%",
+							// transformOriginY: "50%"
+						}
+					]
 				]
 			},
 			/* Magic.css */
@@ -1216,12 +1260,22 @@
 						},
 						0
 					],
-					[{ opacity: 0, rotateY: 180 }, 1],
+					[
+						{
+							opacity: 0,
+							// transformPerspective: 2000,
+							// transformOriginX: "100%",
+							// transformOriginY: 0,
+							rotateY: 180
+						},
+						1
+					],
 					[
 						{
 							transformPerspective: 0,
-							transformOriginX: "50%",
-							transformOriginY: "50%"
+							// transformOriginX: "50%",
+							// transformOriginY: "50%",
+							// rotateY: 0
 						}
 					]
 				]
