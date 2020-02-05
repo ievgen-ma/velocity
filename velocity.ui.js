@@ -408,13 +408,17 @@
 		/* Support: <=IE8: Callouts will have no effect, and transitions will simply fade in/out. IE9/Android 2.3: Most effects are fully supported, the rest fade in/out. All other browsers: full support. */
 		Velocity.RegisterEffect.packagedEffects = {
 			/* Animate.css */
-			zoomIn: {
+			zoomIn2: {
 				defaultDuration: 3000,
 				calls: [[{ scale: 1.2 }, 1]]
 			},
 			zoomOut: {
 				defaultDuration: 3000,
 				calls: [[{ scale: 0.8 }, 1]]
+			},
+			zoomIn: {
+				defaultDuration: 3000,
+				calls: [[{ scale: 1.5 }, 1]]
 			},
 			"callout.bounce": {
 				defaultDuration: 550,
