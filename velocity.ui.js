@@ -417,8 +417,8 @@
 				calls: [[{ scale: 0.8 }, 1]]
 			},
 			zoomIn: {
-				defaultDuration: 3000,
-				calls: [[{ scale: 1.5 }, 1]]
+				defaultDuration: 300,
+				calls: [[{ scale: 1.05 }, 1]]
 			},
 			"callout.bounce": {
 				defaultDuration: 550,
