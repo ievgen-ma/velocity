@@ -409,16 +409,16 @@
 		Velocity.RegisterEffect.packagedEffects = {
 			/* Animate.css */
 			zoomIn2: {
-				defaultDuration: 3000,
+				defaultDuration: 1000,
 				calls: [[{ scale: 1.2 }, 1]]
 			},
 			zoomOut: {
-				defaultDuration: 3000,
+				defaultDuration: 1000,
 				calls: [[{ scale: 0.8 }, 1]]
 			},
 			zoomIn: {
 				defaultDuration: 300,
-				calls: [[{ scale: 1.05 }, 1]]
+				calls: [[{ scale: 1.05 }, 0.3]]
 			},
 			"callout.bounce": {
 				defaultDuration: 550,
